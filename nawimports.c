@@ -5,40 +5,46 @@ int main()
     // Declaração de variáveis para o cálculo dos preços dos produtos no site
     float precoDoProduto = 0;
     float iofPorcentagem = 0.0638;
-    float precoDoProdutoComIOF = precoDoProduto * iofPorcentagem;
-    int frete = 0;
-    int taxa = 0;
-    float totalEmDolares = frete + taxa + precoDoProdutoComIOF;
+    float precoDoProdutoComIOF = 0;
+    float frete = 0;
+    float taxa = 0;
+    float totalEmDolares = 0;
     float dolarHoje = 0;
-    float custoEmReais = totalEmDolares * dolarHoje;
-    float precoComCustos = 0;
+    float custoEmReais = 0;
     float precoFinalDoProduto = 0;
-    float margemDeLucro = precoFinalDoProduto - precoComCustos;
+    float margemDeLucro = precoFinalDoProduto - custoEmReais;
     
     printf("Olá Nícolas, vamos começar os cáculos!\n");
     
-    printf("Digite o valor do produto que será importado:\n ");
+    printf("\nDigite o valor do produto que será importado: ");
     scanf("%f", &precoDoProduto);
     
-    printf("Ok, com a taxa do IOF (Imposto sobre Operações Financeiras) o valor do seu produto fica no total de: \n", &precoDoProdutoComIOF);
+    precoDoProdutoComIOF = precoDoProduto * iofPorcentagem;
     
-    printf("Agora faremos a soma do frete do produto, digite o valor do frete: \n");
-    scanf("%i", &frete);
+    printf("\nOk, com a taxa do IOF (Imposto sobre Operações Financeiras) o valor do seu produto fica no total de: %f", precoDoProdutoComIOF);
     
-    printf("Beleza! Faremos também a soma da taxa do produto, digite o valor da taxa: \n");
-    scanf("%i", &taxa);
+    printf("\nAgora faremos a soma do frete do produto, digite o valor do frete: ");
+    scanf("%f", &frete);
     
-    printf("O custo total em dólares do seu produto é: \n", &totalEmDolares);
+    printf("\nBeleza! Faremos também a soma da taxa do produto, digite o valor da taxa: ");
+    scanf("%f", &taxa);
     
-    printf("Quer saber o valor em dólares? Digite a o valor da cotação que deseja usar: \n");
+    totalEmDolares = frete + taxa + precoDoProdutoComIOF;
+    
+    printf("\nO custo total em dólares do seu produto é: %f", totalEmDolares);
+    
+    printf("\nQuer saber o valor em dólares? Digite a o valor da cotação que deseja usar: ");
     scanf("%f", &dolarHoje);
     
-    printf("Estamos fazendo a multiplicação para você... e o resultado é: \n", &custoEmReais);
+    printf("\nEstamos fazendo a multiplicação para você... e o resultado é: ", custoEmReais);
     
-    printf("Agora, para finalizar, você decide o valor que deseja anunciar seu produto e calcularemos a sua margem de lucro: \n");
+    custoEmReais = totalEmDolares * dolarHoje;
+    
+    printf("\nAgora, para finalizar, você decide o valor que deseja anunciar seu produto e calcularemos a sua margem de lucro: \n");
     scanf("%f", &precoFinalDoProduto);
     
-    printf("Sua margem de lucro é: ", &margemDeLucro);
+    margemDeLucro = precoFinalDoProduto - custoEmReais;
+    printf("Sua margem de lucro é: %f ", margemDeLucro);
     
     return 0;
 }
