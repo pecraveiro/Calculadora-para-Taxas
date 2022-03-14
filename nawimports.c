@@ -36,7 +36,7 @@ int main()
     printf("\nQuer saber o valor em dólares? Digite a o valor da cotação que deseja usar: ");
     scanf("%f", &dolarHoje);
     
-    printf("\nEstamos fazendo a multiplicação para você... e o resultado é: ", custoEmReais);
+    printf("\nEstamos fazendo a multiplicação para você... e o resultado é: %f", custoEmReais);
     
     custoEmReais = totalEmDolares * dolarHoje;
     
