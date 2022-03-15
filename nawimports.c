@@ -1,3 +1,5 @@
+// O programa calcula o Custo, Preço Final do Produto e a Margem de lucro para o usuário
+
 #include <stdio.h>
 
 int main()
@@ -19,7 +21,7 @@ int main()
     printf("\nDigite o valor do produto que será importado: ");
     scanf("%f", &precoDoProduto);
     
-    precoDoProdutoComIOF = precoDoProduto * iofPorcentagem;
+    precoDoProdutoComIOF = (precoDoProduto * iofPorcentagem) + precoDoProduto;
     
     printf("\nOk, com a taxa do IOF (Imposto sobre Operações Financeiras) o valor do seu produto fica no total de: %f", precoDoProdutoComIOF);
     
@@ -36,9 +38,9 @@ int main()
     printf("\nQuer saber o valor em dólares? Digite a o valor da cotação que deseja usar: ");
     scanf("%f", &dolarHoje);
     
-    printf("\nEstamos fazendo a multiplicação para você... e o resultado é: %f", custoEmReais);
-    
     custoEmReais = totalEmDolares * dolarHoje;
+    
+    printf("\nEstamos fazendo a multiplicação para você... e o resultado é: %f", custoEmReais);
     
     printf("\nAgora, para finalizar, você decide o valor que deseja anunciar seu produto e calcularemos a sua margem de lucro: \n");
     scanf("%f", &precoFinalDoProduto);
